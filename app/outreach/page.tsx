@@ -131,7 +131,7 @@ export default function OutreachPage() {
         <div className="animate-fade-in space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
-                    <h1 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+                    <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
                         <MessageSquare className="w-5 h-5 text-[#730404]" />
                         Outreach
                     </h1>
@@ -142,7 +142,7 @@ export default function OutreachPage() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                 {[
                     {
                         label: 'Total messages',

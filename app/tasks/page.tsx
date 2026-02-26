@@ -158,7 +158,7 @@ export default function TasksPage() {
             {/* Page Header */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-white tracking-tight">Tasks</h1>
+                    <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight">Tasks</h1>
                     <p className="text-sm text-[#666] mt-1">
                         Manage and track your work with list or board view
                     </p>

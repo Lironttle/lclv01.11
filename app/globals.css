@@ -194,3 +194,37 @@
   opacity: 1 !important;
   filter: brightness(1.15);
 }
+
+/* Mobile touch improvements */
+@media (max-width: 767px) {
+  /* Prevent overscroll bounce on iOS */
+  html {
+    overscroll-behavior: none;
+  }
+
+  /* Larger tap targets on mobile */
+  button,
+  a,
+  [role='button'] {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Tighter spacing for mobile */
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+  }
+
+  /* Reduce animation distance on mobile for snappier feel */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

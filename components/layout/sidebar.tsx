@@ -42,11 +42,11 @@ export function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose }: Side
                 className={cn(
                     'fixed top-0 left-0 h-full z-50 flex flex-col border-r transition-all duration-300 ease-in-out',
                     'bg-[#0a0a0a] border-[#1a1a1a]',
-                    // Mobile: slide in/out
+                    // Mobile: slide in/out, always expanded width
                     'md:translate-x-0',
                     mobileOpen ? 'translate-x-0' : '-translate-x-full',
                 )}
-                style={{ width: collapsed ? SIDEBAR_COLLAPSED_WIDTH : SIDEBAR_WIDTH }}
+                style={{ width: `min(${collapsed ? SIDEBAR_COLLAPSED_WIDTH : SIDEBAR_WIDTH}px, 85vw)` }}
             >
                 {/* Logo */}
                 <div className="flex items-center h-16 px-4 border-b border-[#1a1a1a] shrink-0">
@@ -61,11 +61,12 @@ export function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose }: Side
                                 priority
                             />
                         </div>
-                        {!collapsed && (
-                            <span className="text-base font-semibold text-white whitespace-nowrap tracking-tight">
-                                LCL Portal
-                            </span>
-                        )}
+                        <span className={cn(
+                            'text-base font-semibold text-white whitespace-nowrap tracking-tight',
+                            collapsed ? 'md:hidden' : '',
+                        )}>
+                            LCL Portal
+                        </span>
                     </div>
                 </div>
 
@@ -93,7 +94,10 @@ export function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose }: Side
                                         isActive ? 'text-[#b91c1c]' : 'text-[#666] group-hover:text-[#a3a3a3]',
                                     )}
                                 />
-                                {!collapsed && <span className="truncate">{item.label}</span>}
+                                {/* Always show label on mobile, respect collapsed on desktop */}
+                                <span className={cn('truncate', collapsed ? 'md:hidden' : '')}>
+                                    {item.label}
+                                </span>
                             </Link>
                         );
                     })}

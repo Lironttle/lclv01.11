@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Sidebar } from './sidebar';
 import { Header } from './header';
+import { PageTransition } from './page-transition';
 import { SIDEBAR_WIDTH, SIDEBAR_COLLAPSED_WIDTH, HEADER_HEIGHT } from '@/lib/constants';
 
 interface MainLayoutProps {
@@ -12,6 +14,7 @@ interface MainLayoutProps {
 export function MainLayout({ children }: MainLayoutProps) {
     const [collapsed, setCollapsed] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const pathname = usePathname();
 
     const sidebarWidth = collapsed ? SIDEBAR_COLLAPSED_WIDTH : SIDEBAR_WIDTH;
 
@@ -30,22 +33,26 @@ export function MainLayout({ children }: MainLayoutProps) {
             />
 
             <main
-                className="transition-all duration-300 md:ml-0"
+                className="transition-all duration-300"
                 style={{
-                    marginLeft: sidebarWidth,
                     paddingTop: HEADER_HEIGHT,
                 }}
             >
-                {/* Add responsive margin on mobile (no sidebar offset) */}
+                {/* Desktop: offset by sidebar. Mobile: no offset */}
                 <style jsx>{`
-          @media (max-width: 767px) {
-            main {
-              margin-left: 0 !important;
-            }
-          }
-        `}</style>
-                <div className="max-w-[1400px] mx-auto p-6">
-                    {children}
+                    main {
+                        margin-left: 0;
+                    }
+                    @media (min-width: 768px) {
+                        main {
+                            margin-left: ${sidebarWidth}px;
+                        }
+                    }
+                `}</style>
+                <div className="max-w-[1400px] mx-auto px-4 py-4 md:p-6">
+                    <PageTransition key={pathname}>
+                        {children}
+                    </PageTransition>
                 </div>
             </main>
         </div>
