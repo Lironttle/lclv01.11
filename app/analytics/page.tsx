@@ -33,7 +33,7 @@ export default function AnalyticsPage() {
             const revenueSeries = getRevenueByMonth();
             const currentRevenue = revenueSeries[revenueSeries.length - 1]?.revenue ?? 0;
             const prevRevenue =
-                revenueSeries[revenueSeries.length - 2]?.revenue ?? currentRevenue || 1;
+                (revenueSeries[revenueSeries.length - 2]?.revenue ?? currentRevenue) || 1;
             const revenueDelta =
                 prevRevenue > 0 ? ((currentRevenue - prevRevenue) / prevRevenue) * 100 : 0;
 

@@ -208,10 +208,10 @@ export default function OutreachPage() {
                 <div className="inline-flex items-center rounded-full bg-[#050505] border border-[#222] p-1 text-xs">
                     {(
                         [
-                            ['queue', 'Queue'] as const,
-                            ['active', 'Active'] as const,
-                            ['replies', 'Replies'] as const,
-                        ] satisfies [OutreachTab, string][]
+                            ['queue', 'Queue'],
+                            ['active', 'Active'],
+                            ['replies', 'Replies'],
+                        ] as [OutreachTab, string][]
                     ).map(([key, label]) => {
                         const isActive = activeTab === key;
                         return (
