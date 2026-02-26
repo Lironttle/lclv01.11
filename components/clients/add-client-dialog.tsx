@@ -161,7 +161,7 @@ export function AddClientDialog({
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="bg-[#111] border-[#222] sm:max-w-[560px] max-h-[90vh] overflow-y-auto">
+            <DialogContent className="sm:max-w-[560px] max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle className="flex items-center gap-2 text-white">
                         <div className="w-8 h-8 rounded-lg bg-[#730404]/20 flex items-center justify-center">
