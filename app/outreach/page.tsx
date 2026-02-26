@@ -205,7 +205,7 @@ export default function OutreachPage() {
             </div>
 
             <div className="flex items-center justify-between gap-3">
-                <div className="inline-flex items-center rounded-full bg-[#050505] border border-[#222] p-1 text-xs">
+                <div className="inline-flex items-center rounded-full bg-[#050505]/80 backdrop-blur-sm border border-[#222] p-1 text-xs">
                     {(
                         [
                             ['queue', 'Queue'],
