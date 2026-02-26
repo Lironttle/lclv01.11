@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, Bell, Search } from 'lucide-react';
 import { NAV_ITEMS, HEADER_HEIGHT } from '@/lib/constants';
@@ -44,8 +45,14 @@ export function Header({ onMenuClick, sidebarWidth }: HeaderProps) {
                     <Bell className="w-5 h-5" />
                     <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#730404] rounded-full" />
                 </button>
-                <div className="ml-2 w-8 h-8 rounded-full bg-[#730404]/30 border border-[#730404]/50 flex items-center justify-center text-xs font-semibold text-white">
-                    LC
+                <div className="ml-2 w-8 h-8 rounded-full overflow-hidden border border-[#730404]/50 flex items-center justify-center">
+                    <Image
+                        src="/logo.svg"
+                        alt="LCL"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8"
+                    />
                 </div>
             </div>
         </header>

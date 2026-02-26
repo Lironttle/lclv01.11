@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   title: 'LCL Portal - Business Command Center',
   description:
     'Internal business command center for LCL Automation. Manage leads, tasks, pipeline, outreach, and analytics.',
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/logo.svg',
+  },
 };
 
 export default function RootLayout({
