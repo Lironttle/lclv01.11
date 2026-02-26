@@ -2,13 +2,14 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { NAV_ITEMS, SIDEBAR_WIDTH, SIDEBAR_COLLAPSED_WIDTH } from '@/lib/constants';
 import {
     LayoutDashboard, Users, CheckSquare, GitBranch,
     MessageSquare, Contact, Building2, BarChart3,
-    Settings, ChevronLeft, ChevronRight, Zap,
+    Settings, ChevronLeft, ChevronRight,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -50,8 +51,15 @@ export function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose }: Side
                 {/* Logo */}
                 <div className="flex items-center h-16 px-4 border-b border-[#1a1a1a] shrink-0">
                     <div className="flex items-center gap-3 overflow-hidden">
-                        <div className="w-8 h-8 rounded-lg bg-[#730404] flex items-center justify-center shrink-0">
-                            <Zap className="w-4 h-4 text-white" />
+                        <div className="w-8 h-8 shrink-0">
+                            <Image
+                                src="/logo.svg"
+                                alt="LCL Portal"
+                                width={32}
+                                height={32}
+                                className="w-8 h-8"
+                                priority
+                            />
                         </div>
                         {!collapsed && (
                             <span className="text-base font-semibold text-white whitespace-nowrap tracking-tight">
