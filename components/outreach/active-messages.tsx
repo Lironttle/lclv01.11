@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import type { OutreachMessage } from '@/lib/types';
 import { OUTREACH_STATUS_CONFIG } from '@/lib/constants';

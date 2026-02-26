@@ -57,13 +57,12 @@ export function ProfileSection() {
         setSavedAt(new Date());
     }, []);
 
-    const lastSavedLabel =
-        savedAt != null
-            ? `Last updated ${savedAt.toLocaleTimeString(undefined, {
-                  hour: '2-digit',
-                  minute: '2-digit',
-              })}`
-            : 'Changes are saved locally for this demo.';
+    const lastSavedLabel = savedAt != null
+        ? 'Last updated ' + savedAt.toLocaleTimeString(undefined, {
+              hour: '2-digit',
+              minute: '2-digit',
+          })
+        : 'Changes are saved locally for this demo.';
 
     return (
         <section className="rounded-xl bg-[#111] border border-[#222] p-6 space-y-5">
@@ -224,3 +223,17 @@ export function ProfileSection() {
                         className="h-8 px-3 border-[#333] text-[#a3a3a3] hover:bg-[#222]"
                     >
                         Change Password
+                    </Button>
+                    <Button
+                        size="sm"
+                        onClick={handleSave}
+                        disabled={saving}
+                        className="h-8 px-4 bg-[#730404] text-white hover:bg-[#8b1a1a] disabled:opacity-50"
+                    >
+                        {saving ? 'Saving...' : 'Save Profile'}
+                    </Button>
+                </div>
+            </div>
+        </section>
+    );
+}
