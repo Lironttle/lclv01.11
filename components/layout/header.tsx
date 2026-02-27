@@ -9,9 +9,10 @@ import { NAV_ITEMS, HEADER_HEIGHT } from '@/lib/constants';
 interface HeaderProps {
     onMenuClick: () => void;
     sidebarWidth: number;
+    isMobile: boolean;
 }
 
-export function Header({ onMenuClick, sidebarWidth }: HeaderProps) {
+export function Header({ onMenuClick, sidebarWidth, isMobile }: HeaderProps) {
     const pathname = usePathname();
     const currentPage = NAV_ITEMS.find((item) => item.href === pathname);
     const pageTitle = currentPage?.label || 'Dashboard';
@@ -21,18 +22,9 @@ export function Header({ onMenuClick, sidebarWidth }: HeaderProps) {
             className="fixed top-0 right-0 z-30 flex items-center justify-between border-b bg-[#0a0a0a]/80 backdrop-blur-md border-[#1a1a1a] px-4 md:px-6 transition-all duration-300"
             style={{
                 height: HEADER_HEIGHT,
-                left: sidebarWidth,
+                left: isMobile ? 0 : sidebarWidth,
             }}
         >
-            {/* Mobile: full-width header */}
-            <style jsx>{`
-                @media (max-width: 767px) {
-                    header {
-                        left: 0 !important;
-                    }
-                }
-            `}</style>
-
             {/* Left: Mobile menu + Page title */}
             <div className="flex items-center gap-3 min-w-0">
                 <button
