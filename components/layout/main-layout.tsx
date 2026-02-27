@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { usePathname } from 'next/navigation';
 import { Sidebar } from './sidebar';
 import { Header } from './header';
-import { PageTransition } from './page-transition';
 import { SIDEBAR_WIDTH, SIDEBAR_COLLAPSED_WIDTH, HEADER_HEIGHT } from '@/lib/constants';
 
 interface MainLayoutProps {
@@ -14,7 +12,6 @@ interface MainLayoutProps {
 export function MainLayout({ children }: MainLayoutProps) {
     const [collapsed, setCollapsed] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
-    const pathname = usePathname();
 
     const sidebarWidth = collapsed ? SIDEBAR_COLLAPSED_WIDTH : SIDEBAR_WIDTH;
 
@@ -35,24 +32,20 @@ export function MainLayout({ children }: MainLayoutProps) {
             <main
                 className="transition-all duration-300"
                 style={{
+                    marginLeft: sidebarWidth,
                     paddingTop: HEADER_HEIGHT,
                 }}
             >
-                {/* Desktop: offset by sidebar. Mobile: no offset */}
+                {/* Mobile: no sidebar offset */}
                 <style jsx>{`
-                    main {
-                        margin-left: 0;
-                    }
-                    @media (min-width: 768px) {
+                    @media (max-width: 767px) {
                         main {
-                            margin-left: ${sidebarWidth}px;
+                            margin-left: 0 !important;
                         }
                     }
                 `}</style>
                 <div className="max-w-[1400px] mx-auto px-4 py-4 md:p-6">
-                    <PageTransition key={pathname}>
-                        {children}
-                    </PageTransition>
+                    {children}
                 </div>
             </main>
         </div>

@@ -21,14 +21,14 @@ export function Header({ onMenuClick, sidebarWidth }: HeaderProps) {
             className="fixed top-0 right-0 z-30 flex items-center justify-between border-b bg-[#0a0a0a]/80 backdrop-blur-md border-[#1a1a1a] px-4 md:px-6 transition-all duration-300"
             style={{
                 height: HEADER_HEIGHT,
-                left: 0,
+                left: sidebarWidth,
             }}
         >
-            {/* Desktop: offset by sidebar width */}
+            {/* Mobile: full-width header */}
             <style jsx>{`
-                @media (min-width: 768px) {
+                @media (max-width: 767px) {
                     header {
-                        left: ${sidebarWidth}px !important;
+                        left: 0 !important;
                     }
                 }
             `}</style>
