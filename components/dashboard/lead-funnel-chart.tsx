@@ -37,7 +37,7 @@ export function LeadFunnelChart() {
     const conversionRate = firstStage > 0 ? ((lastStage / firstStage) * 100).toFixed(1) : '0';
 
     return (
-        <div className="card-glow rounded-xl bg-[#111] border border-[#222] p-6 hover:border-[#333] transition-all duration-300">
+        <div className="card-glow rounded-xl bg-[#111] border border-[#222] p-4 md:p-6 hover:border-[#333] transition-all duration-300">
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div>

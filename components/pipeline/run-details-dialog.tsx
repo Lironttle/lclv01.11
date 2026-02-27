@@ -77,7 +77,7 @@ export function RunDetailsDialog({ run, open, onOpenChange }: RunDetailsDialogPr
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="max-w-3xl border border-[#333] bg-[#050505] text-white">
+            <DialogContent className="max-w-3xl text-white">
                 <DialogHeader>
                     <DialogTitle className="flex items-center justify-between gap-3">
                         <span className="flex flex-col gap-1">

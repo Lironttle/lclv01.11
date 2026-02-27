@@ -39,7 +39,7 @@ export function StatsCard({ title, value, change, trend, icon, index = 0 }: Stat
     return (
         <div
             className={cn(
-                'card-glow group relative rounded-xl bg-[#111] border border-[#222] p-5',
+                'card-glow group relative rounded-xl bg-[#111] border border-[#222] p-4 md:p-5',
                 'flex flex-col gap-3 overflow-hidden',
                 'hover:border-[#333] hover:bg-[#141414] transition-all duration-300',
             )}
@@ -53,17 +53,17 @@ export function StatsCard({ title, value, change, trend, icon, index = 0 }: Stat
 
             {/* Header row */}
             <div className="flex items-center justify-between relative z-10">
-                <span className="text-sm text-[#a3a3a3] font-medium tracking-wide uppercase">
+                <span className="text-xs md:text-sm text-[#a3a3a3] font-medium tracking-wide uppercase">
                     {title}
                 </span>
-                <div className="w-9 h-9 rounded-lg bg-[#730404]/15 flex items-center justify-center group-hover:bg-[#730404]/25 transition-colors duration-300">
-                    <Icon className="w-4 h-4 text-[#b91c1c] group-hover:text-[#dc2626] transition-colors duration-300" />
+                <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-[#730404]/15 flex items-center justify-center group-hover:bg-[#730404]/25 transition-colors duration-300">
+                    <Icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#b91c1c] group-hover:text-[#dc2626] transition-colors duration-300" />
                 </div>
             </div>
 
             {/* Value */}
             <div className="relative z-10">
-                <span className="text-3xl font-bold font-mono tracking-tight text-white">
+                <span className="text-2xl md:text-3xl font-bold font-mono tracking-tight text-white">
                     {value}
                 </span>
             </div>

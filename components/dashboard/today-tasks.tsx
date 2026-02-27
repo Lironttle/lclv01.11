@@ -53,7 +53,7 @@ export function TodayTasks() {
     };
 
     return (
-        <div className="card-glow rounded-xl bg-[#111] border border-[#222] p-6 hover:border-[#333] transition-all duration-300 flex flex-col">
+        <div className="card-glow rounded-xl bg-[#111] border border-[#222] p-4 md:p-6 hover:border-[#333] transition-all duration-300 flex flex-col">
             {/* Header */}
             <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2.5">

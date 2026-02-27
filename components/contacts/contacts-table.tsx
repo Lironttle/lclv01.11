@@ -143,7 +143,7 @@ export function ContactsTable({
 
     return (
         <div className="space-y-3">
-            <div className="rounded-xl bg-[#111] border border-[#222] overflow-hidden">
+            <div className="rounded-xl bg-[#111] border border-[#222] overflow-x-auto">
                 <Table>
                     <TableHeader>
                         <TableRow className="border-b border-[#222] hover:bg-transparent">
