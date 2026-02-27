@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   description:
     'Internal business command center for LCL Automation. Manage leads, tasks, pipeline, outreach, and analytics.',
   icons: {
-    icon: '/favicon.svg',
-    apple: '/logo.svg',
+    icon: '/lcl-logo.png',
+    apple: '/lcl-logo.png',
   },
 };
 

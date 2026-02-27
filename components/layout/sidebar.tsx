@@ -51,13 +51,13 @@ export function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose }: Side
                 {/* Logo */}
                 <div className="flex items-center h-16 px-4 border-b border-[#1a1a1a] shrink-0">
                     <div className="flex items-center gap-3 overflow-hidden">
-                        <div className="w-8 h-8 shrink-0">
+                        <div className="w-8 h-8 shrink-0 rounded-full overflow-hidden">
                             <Image
-                                src="/logo.svg"
+                                src="/lcl-logo.png"
                                 alt="LCL Portal"
                                 width={32}
                                 height={32}
-                                className="w-8 h-8"
+                                className="w-8 h-8 object-cover"
                                 priority
                             />
                         </div>
