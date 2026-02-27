@@ -54,13 +54,13 @@ export function Header({ onMenuClick, sidebarWidth }: HeaderProps) {
                     <Bell className="w-4 h-4 md:w-5 md:h-5" />
                     <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#730404] rounded-full" />
                 </button>
-                <div className="ml-1 md:ml-2 w-7 h-7 md:w-8 md:h-8 rounded-full overflow-hidden border border-[#730404]/50 flex items-center justify-center">
+                <div className="ml-1 md:ml-2 w-7 h-7 md:w-8 md:h-8 rounded-full overflow-hidden border border-[#730404]/50">
                     <Image
-                        src="/logo.svg"
+                        src="/lcl-logo.png"
                         alt="LCL"
                         width={32}
                         height={32}
-                        className="w-7 h-7 md:w-8 md:h-8"
+                        className="w-7 h-7 md:w-8 md:h-8 object-cover"
                     />
                 </div>
             </div>
